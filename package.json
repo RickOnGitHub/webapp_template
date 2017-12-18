@@ -1,5 +1,5 @@
 {
-  "name": "grunt",
+  "name": "webapp_template",
   "version": "1.0.0",
   "description": "School project",
   "main": "index.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RickOnGitHub/webapp_template/issues"
   },
-  "homepage": "https://github.com/RickOnGitHub/webapp_template#readme"
+  "homepage": "https://github.com/RickOnGitHub/webapp_template#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
 }
