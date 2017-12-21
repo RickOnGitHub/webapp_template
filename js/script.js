@@ -1,3 +1,5 @@
+import x from 'script2';
+
 document.addEventListener("DOMContentLoaded", function(event) {
-    console.log("DOM fully loaded and parsed");
+    x("DOM fully loaded and parsed");
 });
