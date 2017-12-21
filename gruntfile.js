@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+    require('load-grunt-tasks')(grunt); // [BABEL] npm install --save-dev load-grunt-tasks
+
     grunt.initConfig({
         jshint: {
             files: ['gruntfile.js', 'js/*.js', 'js/*.js'],
@@ -23,6 +25,24 @@ module.exports = function(grunt) {
                     ext: '.min.css'
                 }]
             }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'js/minified.js': ['js/babel.js']
+                }
+            }
+        },
+        babel: {
+            options: {
+                sourceMap: true,
+                presets: ['env']
+            },
+            dist: {
+                files: {
+                    'js/babel.js': 'js/script.js'
+                }
+            }
         }
     });
 
@@ -31,5 +51,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('default', ['jshint','cssmin']);
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    grunt.registerTask('default', ['jshint','cssmin','babel','uglify']);
 };
