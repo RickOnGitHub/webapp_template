@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'js/minified.js': ['js/babel.js']
+                    'js/minified.js': ['js/babel.js','js/babel2.js']
                 }
             }
         },
@@ -40,7 +40,8 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'js/babel.js': 'js/script.js'
+                    'js/babel.js': 'js/script.js',
+                    'js/babel2.js': 'js/script2.js'
                 }
             }
         }
