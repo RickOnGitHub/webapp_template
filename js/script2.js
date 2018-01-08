@@ -1,3 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    console.log("DOM fully loaded and parsed (script 2)");
-});
+const x = function (y){
+    console.log(y);
+};
+
+export default x;

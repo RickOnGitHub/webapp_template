@@ -6,6 +6,7 @@ module.exports = function(grunt) {
         jshint: {
             files: ['gruntfile.js', 'js/*.js', 'js/*.js'],
             options: {
+                esversion : 6,
                 globals: {
                     jQuery: true
                 }
@@ -29,19 +30,18 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'js/minified.js': ['js/babel.js','js/babel2.js']
+                    'js/minified.js': ['js/dev_script.js','js/dev_script2.js']
                 }
             }
         },
         babel: {
             options: {
                 sourceMap: true,
-                presets: ['env']
             },
             dist: {
                 files: {
-                    'js/babel.js': 'js/script.js',
-                    'js/babel2.js': 'js/script2.js'
+                    'js/dev_script.js': 'js/script.js',
+                    'js/dev_script2.js': 'js/script2.js'
                 }
             }
         }
@@ -54,5 +54,5 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['jshint','cssmin','babel','uglify']);
+    grunt.registerTask('default', ['jshint','babel','uglify','cssmin']);
 };
